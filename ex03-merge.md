@@ -15,7 +15,7 @@ $ git switch main
 (2) 次のコマンドで、現在のブランチが `main` であることを確認してください。
 
 ```bash
-git branch
+$ git branch
 ```
 
 (3) フォルダ内にsample-a.txt・sample-b.txtが共に無いことを確認してください。
@@ -23,7 +23,7 @@ git branch
 (4) 次のコマンドで、 `feature-a` ブランチを `main` ブランチにマージしてください。
 
 ```bash
-git merge feature-a
+$ git merge feature-a
 ```
 
 (5) フォルダ内にsample-a.txtがあり、「Aから追加」と書かれていることを確認してください。
