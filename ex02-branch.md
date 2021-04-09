@@ -67,7 +67,7 @@ $ git add sample-b.txt
 $ git commit -m "sample-b.txtを作成"
 ```
 
-# 3. mainブランチでの確認
+# 3. 確認
 (1) 次のコマンドで、 `feature-a` ブランチに移動してください。
 
 ```bash
