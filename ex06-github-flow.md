@@ -95,7 +95,7 @@ $ git push origin add-N
 (1) 全てのプルリクエストがマージされたら、次のコマンドでフェッチしてください。
 
 ```bash
-$ git fetch origin
+$ git fetch
 ```
 
 (2) 次のコマンドで、 `main` ブランチに移動してください。
