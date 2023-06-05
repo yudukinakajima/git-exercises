@@ -29,17 +29,23 @@
 再びおはよう
 ```
 
-(4) 画面下の[Commit message]に「sample.txtに「再びおはよう」を追加」と記入後、[Commit changes]をクリックしてください。
+(4) [Commit changes...]をクリック後、[Commit message]に「sample.txtに「再びおはよう」を追加」と記入して、[Commit changes]をクリックしてください。
 
 # 2. 自分の作業 - ブランチの作成
 (1) 次のコマンドでローカルリポジトリにブランチを作成してください。
 
 ```bash
-$ git branch add-gn
-$ git switch add-gn
+$ git switch -c add-gn
+Switched to a new branch 'add-gn'
 ```
 
 (2) 次のコマンドで現在のブランチが `add-gn` であることを確認してください。
+
+```bash
+$ git branch
+* add-gn
+  main
+```
 
 (3) エディタでsample.txtを開いた後、最後の行に「おやすみなさい」を追記・保存してください。
 
@@ -55,18 +61,35 @@ $ git switch add-gn
 ```bash
 $ git add sample.txt
 $ git commit -m "sample.txtに「おやすみなさい」を追加"
+[add-gn 6194a12] sample.txtに「おやすみなさい」を追加
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 ```
 
 (5) 次のコマンドでプッシュおよびリモートブランチの作成を行ってください。
 
 ```bash
 $ git push origin add-gn
+Enumerating objects: 49, done.
+Counting objects: 100% (49/49), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (29/29), done.
+Writing objects: 100% (49/49), 12.81 KiB | 1.83 MiB/s, done.
+Total 49 (delta 20), reused 25 (delta 10), pack-reused 0
+remote: Resolving deltas: 100% (20/20), done.
+remote: 
+remote: Create a pull request for 'add-gn' on GitHub by visiting:
+remote:      https://github.com/xxxxxx/git-exercises/pull/new/add-gn
+remote: 
+To https://github.com/xxxxxx/git-exercises
+ * [new branch]      add-gn -> add-gn
 ```
 
 (6) 次のコマンドで、まだ現在のブランチが `add-gn` であることを確認してください。
 
 ```bash
 $ git branch
+* add-gn
+  main
 ```
 
 # 3. 自分の作業 - プルリクエストの作成
@@ -78,7 +101,7 @@ $ git branch
 
 (3) [New pull request]をクリックしてください。
 
-(4) [base]で「main」、[compare]で「add-gn」を選択すると、マージできない旨が表示されます。これは、競合が起きていることを示します。この状態でもプルリクエストを作成することは可能ですので、[Create pull request]をクリックしてください。
+(4) [base repository]で「自分のアカウント名/git-exercises」、「[base]で「main」、[compare]で「add-gn」を選択すると、[Can’t automatically merge.]と表示されます。これは、競合が起きていることを示します。この状態でもプルリクエストを作成することは可能ですので、[Create pull request]をクリックしてください。
 
 (5) [Open a pull request]画面で、各項目に次のように記入してください。
 
@@ -109,6 +132,8 @@ $ git branch
 
 ```bash
 $ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
 ```
 
 (2) 次のコマンドで現在のブランチが `main` であることを確認してください。
@@ -121,7 +146,18 @@ $ git branch
 
 ```bash
 $ git fetch
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 7 (delta 2), reused 1 (delta 0), pack-reused 0
+Unpacking objects: 100% (7/7), 2.07 KiB | 162.00 KiB/s, done.
+From https://github.com/MasatoshiTada8888/git-exercises
+   d0a1f5c..11f227c  main       -> origin/main
 $ git merge origin/main
+Updating d0a1f5c..11f227c
+Fast-forward
+ sample.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 ```
 
 (4) エディタでsample.txtの内容を確認してください。次のようになっているはずです。
@@ -142,4 +178,5 @@ $ git branch -D add-gn
 
 ```bash
 $ git branch
+* main
 ```

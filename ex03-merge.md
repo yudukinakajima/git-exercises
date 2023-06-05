@@ -16,6 +16,9 @@ $ git switch main
 
 ```bash
 $ git branch
+  feature-a
+  feature-b
+* main
 ```
 
 (3) フォルダ内にsample-a.txt・sample-b.txtが共に無いことを確認してください。
@@ -24,6 +27,11 @@ $ git branch
 
 ```bash
 $ git merge feature-a
+Updating 85d4fd9..e3d2163
+Fast-forward
+ sample-a.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 sample-a.txt
 ```
 
 (5) フォルダ内にsample-a.txtがあり、「Aから追加」と書かれていることを確認してください。
@@ -39,6 +47,9 @@ $ git switch feature-b
 
 ```bash
 $ git branch
+  feature-a
+* feature-b
+  main
 ```
 
 (3) フォルダ内にsample-a.txtが無く、sample-b.txtがあることを確認してください。
@@ -58,6 +69,8 @@ $ git merge main
 ```bash
 $ git add sample-a.txt
 $ git commit -m "sample-a.txtに追記"
+[feature-b 06fb7e8] sample-a.txtに追記
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 ```
 
 # 3. 機能追加後のfeature-bをmainにマージ
@@ -65,12 +78,18 @@ $ git commit -m "sample-a.txtに追記"
 
 ```bash
 $ git switch main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
 ```
 
 (2) 次のコマンドで、現在のブランチが `main` であることを確認してください。
 
 ```bash
 $ git branch
+  feature-a
+  feature-b
+* main
 ```
 
 (3) フォルダ内にsample-a.txtがあり、sample-b.txtが無いことを確認してください。
@@ -81,6 +100,12 @@ $ git branch
 
 ```bash
 $ git merge feature-b
+Updating e3d2163..06fb7e8
+Fast-forward
+ sample-a.txt | 3 ++-
+ sample-b.txt | 1 +
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+ create mode 100644 sample-b.txt
 ```
 
 (6) フォルダ内にsample-a.txt・sample-b.txtが共にあることを確認してください。
@@ -91,6 +116,9 @@ $ git merge feature-b
 
 ```bash
 $ git branch
+  feature-a
+  feature-b
+* main
 ```
 
-> 次の演習で使いますので、ブランチは削除しないでください。
+> 次の演習で使いますので、各ブランチは削除しないでください。

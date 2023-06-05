@@ -10,19 +10,23 @@
 
 ```bash
 $ git switch feature-a
+Switched to branch 'feature-a'
 ```
 
 (2) 次のコマンドで、現在のブランチが `feature-a` であることを確認してください。
 
 ```bash
 $ git branch
+* feature-a
+  feature-b
+  main
 ```
 
 (3) フォルダ内にsample-a.txtがあり、sample-b.txtが無いことを確認してください。
 
 (4) sample-a.txtの最終行に、「Aから追加2」と記入・保存してください。
 
-sample-a.txtは次のようになります。
+sample-a.txtの内容は次のようになります。
 
 ```
 Aから追加
@@ -47,6 +51,9 @@ $ git switch main
 
 ```bash
 $ git branch
+  feature-a
+  feature-b
+* main
 ```
 
 (3) フォルダ内にsample-a.txt・sample-b.txtが共にあることを確認してください。
@@ -100,12 +107,22 @@ Aから追加2
 ```bash
 $ git add sample-a.txt
 $ git commit -m "feature-aをmainにマージ"
+[main d0a1f5c] feature-aをmainにマージ
 ```
 
 (3) 次のコマンドでリモートリポジトリにプッシュしてください。
 
 ```bash
 $ git push origin main
+Enumerating objects: 18, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (17/17), 1.44 KiB | 368.00 KiB/s, done.
+Total 17 (delta 8), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (8/8), completed with 1 local object.
+To https://github.com/xxxxxx/git-exercises
+   85d4fd9..d0a1f5c  main -> main
 ```
 
 (4) ブラウザで、Forkしたプロジェクトを開いてください。sample-a.txtとsample-b.txtがあれば成功です。
@@ -115,16 +132,19 @@ $ git push origin main
 
 ```bash
 $ git branch -D feature-a
+Deleted branch feature-a (was 462b280).
 ```
 
 (2) 次のコマンドで `feature-b` ブランチを削除してください。
 
 ```bash
 $ git branch -D feature-b
+Deleted branch feature-b (was 06fb7e8).
 ```
 
 (3) 次のコマンドでブランチが `main` のみになっていることを確認してください。
 
 ```bash
 $ git branch
+* main
 ```

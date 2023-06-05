@@ -2,9 +2,9 @@
 =======================================
 
 # 1. リポジトリのフォークとクローン
-(1) 講師が指定したリモートリポジトリをForkしてください。
+(1) https://github.com/MasatoshiTada/git-exercises をForkしてください。
 
-(2) ForkしたプロジェクトのURL（例： https://github.com/自分のアカウント名/git-exercises ）をコピーしてください。
+(2) ForkしたリポジトリのURL（例： https://github.com/自分のアカウント名/git-exercises ）をコピーしてください（選択肢などはすべてデフォルトのままでOKです）。
 
 (3) ターミナルを起動し、適当なフォルダで次のコマンドを実行してください。リモートリポジトリがローカルにクローンされます。
 
@@ -12,7 +12,7 @@
 $ git clone コピーしたURL
 ```
 
-(4) 次のコマンドで、$ git-exercisesフォルダに移動してください。
+(4) 次のコマンドで、git-exercisesフォルダに移動してください。
 
 ```bash
 $ cd git-exercises
@@ -35,8 +35,10 @@ $ git status
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-	modified:   sample.txt
+        modified:   sample.txt
 ```
+
+> 上記のメッセージにある通り、`git restore sample.txt`とするとファイルの内容が元に戻ります（＝空になる）。
 
 (4) 次のコマンドでsample.txtをステージングしてください。
 
@@ -55,10 +57,10 @@ $ git status
 ```bash
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
-	modified:   sample.txt
+        modified:   sample.txt
 ```
 
-> ステージングをキャンセルしたい場合は `git rm --cached ファイル名` です。
+> 上記のメッセージにある通り、`git restore --staged sample.txt`とするとステージングされていない状態に戻ります（ファイルの内容はそのまま）。
 
 # 3. リポジトリへのコミットとプッシュ
 (1) 次のコマンドでコミットしてください。
@@ -85,6 +87,6 @@ nothing to commit, working tree clean
 $ git push origin main
 ```
 
-(4) ブラウザで、Forkしたプロジェクトにあるsample.txtを開いてください。
+(4) ブラウザでGitHubを開き、Forkしたリポジトリにあるsample.txtを開いてください。
 
 sample.txtに「おはよう」と記入されていれば成功です。

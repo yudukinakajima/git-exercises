@@ -10,4 +10,3 @@ Git演習
 - [演習3 ローカルリポジトリでのブランチのマージ](ex03-merge.md)
 - [演習4 ローカルリポジトリでの競合の解消](ex04-conflict-local.md)
 - [演習5 GitHubでのプルリクエストとコンフリクトの解消](ex05-conflict-remote.md)
-- [演習6 GitHub flow](ex06-github-flow.md)
